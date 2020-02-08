@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9d9444567d.js"></script>
+
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
@@ -14,15 +16,16 @@
         <div class="col">
         <div class="location">
             <h1 id="timezone-location"></h1>
-            <p id="icon"></p>
-            <div id="description"></div>
+            <p class="mt-5" id="icon"></p>
+            <h3 id="description"></h3>
         </div>
     </div>
 </div>
         <div class="row">
             <h1 class="col-md-auto">
                 <div class="temperature">
-                    <div id="temperature-degrees"></div>
+                <span style="display: flex; flex-direction: row;"><div id="temperature-degrees"></div><div>&deg;</div></span>
+
         </div>
 
             </div>
