@@ -16,16 +16,13 @@ window.addEventListener('load',()=>{
                         long = position.coords.longitude;
                         lat = position.coords.longitude;
                         let proxy = "https://cors-anywhere.herokuapp.com/";
-                        // let api_key = process.env.KEY;
-                        //open weather api vvvvvvvvvv
-                        // let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api_key}`;
+
                         let url = `${proxy}https://api.darksky.net/forecast/b4ee95817344bbc19279b4538610ffb3/${lat},${long}`
                         
                         
                                            fetch(url).then(response =>{
                                             return response.json()
                                         }).then(data =>{
-                                                console.log(data);
                                                 const {temperature, summary, icon} = data.currently;
                                                 // //Location
                                                 location.innerHTML = data.timezone;
@@ -45,7 +42,7 @@ window.addEventListener('load',()=>{
                 const skycons = new Skycons({"color": "#fff"});
                 const currentIcon = icon.replace(/-/g, "_").toUpperCase();
                 skycons.play();
-                return skycons.set(iconID, skycons[currentIcon]);
+                return skycons.set(iconID, Skycons[currentIcon]);
           }
     
 });
