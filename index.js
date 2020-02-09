@@ -12,7 +12,7 @@ window.addEventListener('load',()=>{
         navigator.geolocation.getCurrentPosition(position =>{
             // setting longitude and latitude during callback of 'getCurrentPosition'
                         long = position.coords.longitude;
-                        lat = position.coords.longitude;
+                        lat = position.coords.latitude;
                     
                         let proxy = "https://cors-anywhere.herokuapp.com/";
                         let url = `${proxy}https://api.darksky.net/forecast/b4ee95817344bbc19279b4538610ffb3/${lat},${long}`
