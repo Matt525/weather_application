@@ -1,38 +1,36 @@
 
-
 window.addEventListener('load',()=>{
-    // let dotenv = require('dotenv');
+    
     let long;
     let lat; 
     let temp = document.getElementById('temperature-degrees');
     let description = document.getElementById('description');
     let location = document.getElementById('timezone-location');
-    
-
+    let weather_icon = document.getElementById('weather_icon');
     if(navigator.geolocation){
-        // calling geolocation at currentposition
+        // calling geolocation
         navigator.geolocation.getCurrentPosition(position =>{
             // setting longitude and latitude during callback of 'getCurrentPosition'
                         long = position.coords.longitude;
                         lat = position.coords.longitude;
+                    
                         let proxy = "https://cors-anywhere.herokuapp.com/";
-
                         let url = `${proxy}https://api.darksky.net/forecast/b4ee95817344bbc19279b4538610ffb3/${lat},${long}`
                         
                         
-                                           fetch(url).then(response =>{
-                                            return response.json()
-                                        }).then(data =>{
-                                                const {temperature, summary, icon} = data.currently;
-                                                // //Location
-                                                location.innerHTML = data.timezone;
-                                                // // Temperature
-                                                temp.innerHTML = temperature;
-                                                // // Description of weather
-                                                description.innerHTML = summary;
-                                                        // Set Icon depending on weather
-                                                setIcons(icon, document.getElementById('weather_icon'));
-                                        })
+                        fetch(url).then(response =>{
+                            return response.json()
+                        }).then(data =>{
+                                const {temperature, summary, icon} = data.currently;
+                                // //Location
+                                location.innerHTML = data.timezone;
+                                // // Temperature
+                                temp.innerHTML = temperature;
+                                // // Description of weather
+                                description.innerHTML = summary;
+                                        // Set Icon depending on weather
+                                setIcons(icon, weather_icon);
+                        })
 
                                         
 
