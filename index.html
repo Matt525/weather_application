@@ -6,17 +6,22 @@
     <title>Weather Application</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/9d9444567d.js"></script>
-
+    
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-
-<div class="container">
+    <div class="jumbotron jumbotron-fluid flex-center p-0 jumbo">
+        <div class="container">
+          <h1 class="display-4">The Weather Application</h1>
+          <p class="lead mt-3">This is a weather application that uses your location and darksky API to bring you your local weather.</p>
+        </div>
+      </div>
+<div class="container pb-5" style="background-color: rgba(51, 51, 51, 0.205); border-radius: 10px;">
     <div class="row">
         <div class="col">
         <div class="location">
             <h1 id="timezone-location"></h1>
-            <p class="mt-5" id="icon"></p>
+            <canvas id="weather_icon" width="128" height="128"></canvas>
             <h3 id="description"></h3>
         </div>
     </div>
@@ -34,5 +39,6 @@
     
         
 <script src="index.js"></script>
+<script src="./skycons.js"></script>
 </body>
 </html>

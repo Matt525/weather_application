@@ -10,7 +10,7 @@ body{
 .container { 
     /* background: rgba(19, 19, 19, 0.164); */
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     border-radius: 10px;
     color: white;
 }
@@ -22,6 +22,16 @@ body > div.container > div:nth-child(2){
 
 span {
     content: "\00B0";
+}
+
+.jumbo { 
+    background: #83a4d4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6e90ce, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #64cacf, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#weather_icon{ 
+    color: white;
 }
 
 /* Spacing for items */
