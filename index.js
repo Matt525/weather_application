@@ -1,6 +1,5 @@
 
 window.addEventListener('load',()=>{
-    
     let long;
     let lat; 
     let temp = document.getElementById('temperature-degrees');
@@ -13,9 +12,10 @@ window.addEventListener('load',()=>{
             // setting longitude and latitude during callback of 'getCurrentPosition'
                         long = position.coords.longitude;
                         lat = position.coords.latitude;
+                        let key = "b4ee95817344bbc19279b4538610ffb3"; 
                     
                         let proxy = "https://cors-anywhere.herokuapp.com/";
-                        let url = `${proxy}https://api.darksky.net/forecast/b4ee95817344bbc19279b4538610ffb3/${lat},${long}`
+                        let url = `${proxy}https://api.darksky.net/forecast/${key}/${lat},${long}`
                         
                         
                         fetch(url).then(response =>{
@@ -23,7 +23,7 @@ window.addEventListener('load',()=>{
                         }).then(data =>{
                                 const {temperature, summary, icon} = data.currently;
                                 // //Location
-                                location.innerHTML = data.timezone;
+                                location.innerHTML = 'Charleston, SC';
                                 // // Temperature
                                 temp.innerHTML = temperature;
                                 // // Description of weather
